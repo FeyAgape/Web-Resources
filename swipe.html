@@ -1,0 +1,45 @@
+<!--Include the below code in the header or footer after the Jquery  -->
+<script src="https://raw.githubusercontent.com/FeyAgape/Web-Resources/master/jquery.touchSwipe.min.js"></script>
+
+<!--Include the below code inline or in the Js file-->
+<script>
+			$(function() {		
+
+				var demo1 = $("#sliderid").slippry({
+					 transition: 'horizontal',
+					// useCSS: true,
+					// speed: 1000,
+					pause: 10000,
+					// auto: true,
+					// preload: 'visible',
+					autoHover: false
+				});	
+
+					//Enable swiping...
+					$("#sliderid li").swipe( {
+
+
+
+						//Generic swipe handler for all directions
+						swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+							
+
+							if (direction == "left") {
+								sliderid.goToNextSlide();
+								return false;
+							};
+
+							if (direction == "right") {
+								sliderid.goToPrevSlide();
+								return false;
+							};
+
+
+						},
+						//Default is 75px, set to 0 for demo so any distance triggers swipe
+					   threshold:0,
+					   allowPageScroll:"vertical"
+					});
+				});
+
+		</script>
